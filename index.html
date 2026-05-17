@@ -101,8 +101,8 @@
       </div>
 
       <div class="hidden md:flex items-center gap-3">
-        <a href="#cta" class="text-sm font-semibold text-slate-700 hover:text-brand-500">登入</a>
-        <a href="#cta" class="text-sm font-semibold px-5 py-2 rounded-lg bg-brand-500 text-white hover:bg-brand-600 transition shadow-lg shadow-brand-500/30">免費試用</a>
+        <a href="https://minute-hk-app.streamlit.app" target="_blank" class="text-sm font-semibold text-slate-700 hover:text-brand-500">登入</a>
+        <a href="https://minute-hk-app.streamlit.app" target="_blank" class="text-sm font-semibold px-5 py-2 rounded-lg bg-brand-500 text-white hover:bg-brand-600 transition shadow-lg shadow-brand-500/30">立即註冊</a>
       </div>
 
       <button @click="open = !open" class="md:hidden p-2">
@@ -118,7 +118,7 @@
       <a href="#use-cases" class="text-slate-700">場景</a>
       <a href="#pricing" class="text-slate-700">價錢</a>
       <a href="#faq" class="text-slate-700">FAQ</a>
-      <a href="#cta" class="text-center font-semibold px-5 py-2 rounded-lg bg-brand-500 text-white">免費試用</a>
+      <a href="https://minute-hk-app.streamlit.app" target="_blank" class="text-center font-semibold px-5 py-2 rounded-lg bg-brand-500 text-white">立即註冊</a>
     </div>
   </nav>
 
@@ -140,8 +140,8 @@
       </p>
 
       <div class="flex flex-col sm:flex-row gap-3 justify-center items-center mb-12 animate-fade-in-up">
-        <a href="#cta" class="px-8 py-4 rounded-xl bg-brand-500 text-white font-semibold text-base hover:bg-brand-600 transition shadow-xl shadow-brand-500/30 hover:scale-105">
-          🎁 免費試用 7 日
+        <a href="https://minute-hk-app.streamlit.app" target="_blank" class="px-8 py-4 rounded-xl bg-brand-500 text-white font-semibold text-base hover:bg-brand-600 transition shadow-xl shadow-brand-500/30 hover:scale-105">
+          🚀 立即註冊試用
         </a>
         <a href="#demo" class="px-8 py-4 rounded-xl border-2 border-slate-200 font-semibold text-base text-slate-700 hover:bg-slate-50 transition">
           ▶ 睇 1 分鐘 Demo
@@ -675,18 +675,20 @@
         7 日免費試用，無需信用卡，隨時取消。
       </p>
 
-      <form action="#" onsubmit="handleSignup(event)" class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto mb-6">
-        <input type="email" name="email" required placeholder="your@email.com"
-               class="flex-1 px-5 py-4 rounded-xl text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-4 focus:ring-white/30" />
-        <button type="submit"
-                class="px-6 py-4 rounded-xl bg-white text-brand-600 font-bold hover:bg-blue-50 transition shadow-xl whitespace-nowrap">
-          🚀 立即試用
-        </button>
-      </form>
+      <div class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto mb-6 justify-center">
+        <a href="https://minute-hk-app.streamlit.app" target="_blank"
+           class="px-8 py-4 rounded-xl bg-white text-brand-600 font-bold hover:bg-blue-50 transition shadow-xl whitespace-nowrap text-center">
+          🚀 立即註冊
+        </a>
+        <a href="https://minute-hk-app.streamlit.app" target="_blank"
+           class="px-8 py-4 rounded-xl border-2 border-white/40 text-white font-bold hover:bg-white/10 transition whitespace-nowrap text-center">
+          已有帳號？登入
+        </a>
+      </div>
 
       <p class="text-sm text-blue-100">
-        ✅ 已有 <span id="signup-count" class="font-bold text-white">23</span> 個 beta tester 加入 ·
-        ✅ 唔需要信用卡 ·
+        ✅ Email 註冊（30 秒搞掂）·
+        ✅ 免費版 30 分鐘/月 ·
         ✅ 5 分鐘 setup
       </p>
     </div>
@@ -748,14 +750,8 @@
     // Init Lucide icons (if used)
     if (window.lucide) lucide.createIcons();
 
-    // Simple signup handler (placeholder - replace with real backend)
-    function handleSignup(e) {
-      e.preventDefault();
-      const email = e.target.email.value;
-      // TODO: 換做你真實嘅 backend / Formspree endpoint
-      alert(`多謝 ${email}！我哋會 24 小時內 send invite 俾你。`);
-      e.target.reset();
-    }
+    // Web app URL（改呢度去你 deploy 嘅 Streamlit URL）
+    const APP_URL = 'https://minute-hk-app.streamlit.app';
   </script>
 </body>
 </html>
