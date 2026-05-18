@@ -200,6 +200,7 @@
         <a href="#features" class="hover:text-brand-500">功能</a>
         <a href="#how-it-works" class="hover:text-brand-500">點用</a>
         <a href="#use-cases" class="hover:text-brand-500">場景</a>
+        <a href="#pricing" class="hover:text-brand-500">價錢</a>
       </div>
 
       <div class="hidden md:flex items-center gap-3">
@@ -218,6 +219,7 @@
       <a href="#features" class="text-slate-700">功能</a>
       <a href="#how-it-works" class="text-slate-700">點用</a>
       <a href="#use-cases" class="text-slate-700">場景</a>
+      <a href="#pricing" class="text-slate-700">價錢</a>
       <a href="https://minute-hk-app.streamlit.app" target="_blank" class="text-center font-semibold px-5 py-2 rounded-lg bg-brand-500 text-white">立即註冊</a>
     </div>
   </nav>
@@ -226,7 +228,7 @@
   <section class="relative pt-32 pb-20 grid-bg overflow-hidden">
     <div class="max-w-7xl mx-auto px-6 text-center relative">
       <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-50 text-brand-600 text-sm font-medium mb-6 animate-pulse-soft">
-        🇭🇰 香港人專用 · 廣東話 native · 私隱第一
+        🇭🇰 香港人專用 · 廣東話 native · HKD 15/月
       </div>
 
       <h1 class="text-5xl md:text-7xl font-black tracking-tight leading-[1.1] mb-6 animate-fade-in-up">
@@ -235,8 +237,8 @@
       </h1>
 
       <p class="text-lg md:text-xl text-slate-600 max-w-2xl mx-auto mb-8 animate-fade-in-up">
-        錄音上傳 → 30 秒出專業會議紀要 + Action Items。<br>
-        識廣東話、識中英夾雜、<strong class="text-slate-900">100% 本地運行</strong>，客戶資料絕不上雲。
+        錄音上傳 → AI 自動出**專業會議紀要** + Action Items + PPT。<br>
+        識廣東話、識中英夾雜，<strong class="text-slate-900">會計師 / 律師 / 醫生</strong>都用得。
       </p>
 
       <div class="flex flex-col sm:flex-row gap-3 justify-center items-center mb-12 animate-fade-in-up">
@@ -348,10 +350,10 @@
         </div>
 
         <div class="p-6 rounded-2xl bg-white border border-slate-100 flex items-start gap-4">
-          <div class="text-3xl">🔒</div>
+          <div class="text-3xl">📊</div>
           <div>
-            <div class="font-semibold mb-1">客戶資料唔可以上雲</div>
-            <div class="text-sm text-slate-600">律師、會計、醫生開會內容極度機密，PDPO 合規問題</div>
+            <div class="font-semibold mb-1">要 follow-up 整 PPT 簡報</div>
+            <div class="text-sm text-slate-600">每次開完會仲要花 2-3 鐘整簡報俾老闆 / 客戶睇</div>
           </div>
         </div>
 
@@ -392,59 +394,67 @@
       </div>
 
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- Feature 1 -->
+        <!-- 1. 廣東話 -->
         <div class="p-8 rounded-2xl border border-slate-100 hover:border-brand-200 hover:shadow-xl transition group">
           <div class="w-12 h-12 rounded-xl bg-brand-50 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition">🇭🇰</div>
           <h3 class="font-bold text-lg mb-2">廣東話 Native</h3>
-          <p class="text-sm text-slate-600">用 Whisper Large-v3 嘅 yue 模型，識廣東話 + 中英夾雜，準確度 95%+</p>
+          <p class="text-sm text-slate-600">識廣東話、中英夾雜、普通話，AI 自動偵測 + 識別專業術語</p>
         </div>
 
+        <!-- 2. 直接錄音 -->
         <div class="p-8 rounded-2xl border border-slate-100 hover:border-brand-200 hover:shadow-xl transition group">
-          <div class="w-12 h-12 rounded-xl bg-brand-50 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition">🔒</div>
-          <h3 class="font-bold text-lg mb-2">100% 本地運行</h3>
-          <p class="text-sm text-slate-600">錄音永遠喺你部電腦，唔上 cloud，PDPO 合規無煩惱</p>
+          <div class="w-12 h-12 rounded-xl bg-brand-50 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition">🎙️</div>
+          <h3 class="font-bold text-lg mb-2">瀏覽器直接錄音</h3>
+          <p class="text-sm text-slate-600">唔需要外置錄音機，瀏覽器即錄即處理；或者上傳 mp3/m4a/wav/mp4</p>
         </div>
 
+        <!-- 3. 專業紀要 -->
         <div class="p-8 rounded-2xl border border-slate-100 hover:border-brand-200 hover:shadow-xl transition group">
           <div class="w-12 h-12 rounded-xl bg-brand-50 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition">📋</div>
           <h3 class="font-bold text-lg mb-2">專業會議紀要</h3>
-          <p class="text-sm text-slate-600">自動抽 Action Items、負責人、deadline，標記決議事項 + 風險</p>
+          <p class="text-sm text-slate-600">自動抽 Action Items、負責人、deadline；標記決議事項 + 風險信號</p>
         </div>
 
+        <!-- 4. PPT 生成 ⭐ -->
         <div class="p-8 rounded-2xl border border-slate-100 hover:border-brand-200 hover:shadow-xl transition group">
-          <div class="w-12 h-12 rounded-xl bg-brand-50 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition">🧠</div>
-          <h3 class="font-bold text-lg mb-2">AI 問答（RAG）</h3>
-          <p class="text-sm text-slate-600">「上次 ABC 公司講過咩 deadline？」AI 幫你由 100 個過往會議搵答案</p>
+          <div class="w-12 h-12 rounded-xl bg-brand-50 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition">📊</div>
+          <h3 class="font-bold text-lg mb-2">PPT 自動生成</h3>
+          <p class="text-sm text-slate-600">AI 將會議內容變成完整 .pptx 簡報，可直接 send 俾老闆 / 客戶</p>
         </div>
 
+        <!-- 5. Calendar 一鍵 -->
         <div class="p-8 rounded-2xl border border-slate-100 hover:border-brand-200 hover:shadow-xl transition group">
-          <div class="w-12 h-12 rounded-xl bg-brand-50 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition">🎙️</div>
-          <h3 class="font-bold text-lg mb-2">直接錄音</h3>
-          <p class="text-sm text-slate-600">一鍵錄音，唔需要外置錄音機，錄完即時處理</p>
+          <div class="w-12 h-12 rounded-xl bg-brand-50 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition">📅</div>
+          <h3 class="font-bold text-lg mb-2">Calendar 一鍵 Add</h3>
+          <p class="text-sm text-slate-600">Action Items 直接加入 Google Calendar / Outlook，唔再漏 deadline</p>
         </div>
 
-        <div class="p-8 rounded-2xl border border-slate-100 hover:border-brand-200 hover:shadow-xl transition group">
-          <div class="w-12 h-12 rounded-xl bg-brand-50 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition">📧</div>
-          <h3 class="font-bold text-lg mb-2">自動發 Email</h3>
-          <p class="text-sm text-slate-600">會後一鍵發紀要俾與會者，附 Word/PDF 檔，完成 workflow</p>
-        </div>
-
+        <!-- 6. 翻譯 -->
         <div class="p-8 rounded-2xl border border-slate-100 hover:border-brand-200 hover:shadow-xl transition group">
           <div class="w-12 h-12 rounded-xl bg-brand-50 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition">🌐</div>
-          <h3 class="font-bold text-lg mb-2">多語言翻譯</h3>
-          <p class="text-sm text-slate-600">廣東話會議一鍵翻成英文 / 簡中 / 日文 / 韓文俾外國 client</p>
+          <h3 class="font-bold text-lg mb-2">6 國語言翻譯</h3>
+          <p class="text-sm text-slate-600">廣東話會議一鍵翻成 English / 简中 / 日 / 韓 / 泰 / 馬來文</p>
         </div>
 
+        <!-- 7. 語氣分析 -->
         <div class="p-8 rounded-2xl border border-slate-100 hover:border-brand-200 hover:shadow-xl transition group">
           <div class="w-12 h-12 rounded-xl bg-brand-50 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition">🎭</div>
-          <h3 class="font-bold text-lg mb-2">情緒分析</h3>
-          <p class="text-sm text-slate-600">AI 識別客戶情緒、風險信號、機會信號，提早 follow up</p>
+          <h3 class="font-bold text-lg mb-2">語氣分析</h3>
+          <p class="text-sm text-slate-600">AI 偵測客戶情緒、隱藏 complaints、流失風險、upsell 機會</p>
         </div>
 
+        <!-- 8. 繼續會議 -->
         <div class="p-8 rounded-2xl border border-slate-100 hover:border-brand-200 hover:shadow-xl transition group">
-          <div class="w-12 h-12 rounded-xl bg-brand-50 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition">🔐</div>
-          <h3 class="font-bold text-lg mb-2">個別加密</h3>
-          <p class="text-sm text-slate-600">特別機密嘅 meeting 可以加密碼，AES-256 加密</p>
+          <div class="w-12 h-12 rounded-xl bg-brand-50 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition">🔗</div>
+          <h3 class="font-bold text-lg mb-2">繼續會議（AI 合併）</h3>
+          <p class="text-sm text-slate-600">同一 client 開幾次會？AI 自動 merge 兩段紀要 + 標記 commitment 變動</p>
+        </div>
+
+        <!-- 9. 自定 jargon -->
+        <div class="p-8 rounded-2xl border border-slate-100 hover:border-brand-200 hover:shadow-xl transition group">
+          <div class="w-12 h-12 rounded-xl bg-brand-50 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition">🏷️</div>
+          <h3 class="font-bold text-lg mb-2">公司專屬 AI</h3>
+          <p class="text-sm text-slate-600">加入你公司 jargon、客戶名、行業（會計/法律/醫療...）AI 識認</p>
         </div>
       </div>
     </div>
@@ -483,8 +493,8 @@
             <div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-brand-500 to-indigo-500 flex items-center justify-center text-3xl text-white shadow-xl shadow-brand-500/30 mx-auto mb-6">📤</div>
             <div class="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-white border-2 border-brand-500 text-brand-500 font-bold flex items-center justify-center text-sm">3</div>
           </div>
-          <h3 class="font-bold text-xl mb-2">匯出 / 分享</h3>
-          <p class="text-slate-600">一鍵匯出 Word/PDF、發 email、入 CRM、或者 AI 問答</p>
+          <h3 class="font-bold text-xl mb-2">匯出 / 加 Calendar</h3>
+          <p class="text-slate-600">一鍵匯出 Word / PDF / PPT、Action Items 加入 Google Calendar / Outlook</p>
         </div>
       </div>
     </div>
@@ -548,6 +558,77 @@
     </div>
   </section>
 
+  <!-- ========== PRICING ========== -->
+  <section id="pricing" class="py-24">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <div class="text-sm font-semibold text-brand-500 uppercase tracking-wider mb-2">收費</div>
+        <h2 class="text-4xl md:text-5xl font-black mb-4">簡單透明 · 任時取消</h2>
+        <p class="text-lg text-slate-600">Free 永久免費，Pro 一杯咖啡價錢解鎖晒</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <!-- FREE -->
+        <div class="p-8 rounded-2xl border border-slate-200 bg-white">
+          <div class="text-sm font-semibold text-slate-500 mb-2">🆓 FREE</div>
+          <div class="text-4xl font-black mb-1">HKD 0<span class="text-base font-normal text-slate-500">/月</span></div>
+          <div class="text-sm text-slate-500 mb-6">永久免費，無需信用卡</div>
+
+          <ul class="space-y-2 text-sm text-slate-700 mb-8">
+            <li class="flex items-start gap-2"><span class="text-green-500">✓</span> 60 分鐘 / 月 (10 分鐘 / 日)</li>
+            <li class="flex items-start gap-2"><span class="text-green-500">✓</span> 廣東話 + 中英識別</li>
+            <li class="flex items-start gap-2"><span class="text-green-500">✓</span> 基本 AI 會議紀要</li>
+            <li class="flex items-start gap-2"><span class="text-green-500">✓</span> Markdown / Word 下載</li>
+            <li class="flex items-start gap-2"><span class="text-green-500">✓</span> 翻譯（English + 简中）</li>
+            <li class="flex items-start gap-2"><span class="text-green-500">✓</span> ICS Calendar 下載</li>
+            <li class="flex items-start gap-2"><span class="text-green-500">✓</span> 過往會議瀏覽</li>
+          </ul>
+
+          <a href="https://minute-hk-app.streamlit.app" target="_blank"
+             class="block text-center px-6 py-3 rounded-xl border-2 border-slate-300 text-slate-700 font-semibold hover:border-brand-500 hover:text-brand-500 transition">
+            免費註冊
+          </a>
+        </div>
+
+        <!-- PRO -->
+        <div class="p-8 rounded-2xl border-2 border-brand-500 bg-gradient-to-br from-brand-50 to-indigo-50 relative">
+          <div class="absolute -top-3 right-6 px-3 py-1 rounded-full bg-brand-500 text-white text-xs font-bold">
+            ⭐ 最抵
+          </div>
+          <div class="text-sm font-semibold text-brand-600 mb-2">⭐ PRO</div>
+          <div class="text-4xl font-black mb-1">
+            HKD 15<span class="text-base font-normal text-slate-500">/月</span>
+          </div>
+          <div class="text-sm text-slate-500 mb-6">一杯咖啡價錢，解鎖晒</div>
+
+          <ul class="space-y-2 text-sm text-slate-700 mb-8">
+            <li class="flex items-start gap-2"><span class="text-brand-500 font-bold">⭐</span> <strong>1000 分鐘 / 月 (30 分鐘 / 日)</strong></li>
+            <li class="flex items-start gap-2"><span class="text-brand-500 font-bold">⭐</span> <strong>📊 PPT 自動生成</strong></li>
+            <li class="flex items-start gap-2"><span class="text-brand-500 font-bold">⭐</span> <strong>📕 PDF 匯出</strong></li>
+            <li class="flex items-start gap-2"><span class="text-brand-500 font-bold">⭐</span> <strong>🎭 語氣分析 + 風險信號</strong></li>
+            <li class="flex items-start gap-2"><span class="text-brand-500 font-bold">⭐</span> 6 國語言翻譯（+ 日 / 韓 / 泰 / 馬來）</li>
+            <li class="flex items-start gap-2"><span class="text-brand-500 font-bold">⭐</span> 📅 Google Calendar / Outlook 一鍵 add</li>
+            <li class="flex items-start gap-2"><span class="text-brand-500 font-bold">⭐</span> 🔗 繼續會議（AI 合併）</li>
+            <li class="flex items-start gap-2"><span class="text-brand-500 font-bold">⭐</span> 🏷️ 自定 jargon + Industry prompts</li>
+            <li class="flex items-start gap-2"><span class="text-brand-500 font-bold">⭐</span> 📈 Dashboard + 詞雲</li>
+            <li class="flex items-start gap-2"><span class="text-brand-500 font-bold">⭐</span> 🔍 過往會議搜尋 + date filter</li>
+            <li class="flex items-start gap-2"><span class="text-brand-500 font-bold">⭐</span> 📧 Email 優先支援</li>
+          </ul>
+
+          <a href="https://minute-hk-app.streamlit.app" target="_blank"
+             class="block text-center px-6 py-3 rounded-xl bg-gradient-to-r from-brand-500 to-indigo-500 text-white font-bold hover:shadow-xl transition shadow-lg shadow-brand-500/30">
+            ⭐ 升級 Pro
+          </a>
+        </div>
+      </div>
+
+      <p class="text-center text-sm text-slate-500 mt-8">
+        💡 已 free 註冊？登入 app 撳 🆓 FREE badge 即可升級。
+        Stripe 安全付款 · 任時取消 · 唔滿意 7 日退款
+      </p>
+    </div>
+  </section>
+
   <!-- ========== FINAL CTA ========== -->
   <section id="cta" class="py-24 bg-gradient-to-br from-brand-500 to-indigo-600 text-white relative overflow-hidden">
     <div class="absolute inset-0 grid-bg opacity-20"></div>
@@ -557,7 +638,7 @@
         慳返每週 10 小時，<br>由今日開始。
       </h2>
       <p class="text-lg md:text-xl text-blue-100 mb-10">
-        7 日免費試用，無需信用卡，隨時取消。
+        永久免費版 60 分鐘/月，無需信用卡。升級 Pro 只需 HKD 15/月。
       </p>
 
       <div class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto mb-6 justify-center">
@@ -573,8 +654,8 @@
 
       <p class="text-sm text-blue-100">
         ✅ Email 註冊（30 秒搞掂）·
-        ✅ 免費版 30 分鐘/月 ·
-        ✅ 5 分鐘 setup
+        ✅ 免費版 60 分鐘/月 ·
+        ✅ 任時取消
       </p>
     </div>
   </section>
@@ -595,27 +676,26 @@
           <div class="font-semibold text-white mb-3 text-sm">產品</div>
           <ul class="space-y-2 text-sm">
             <li><a href="#features" class="hover:text-white">功能</a></li>
+            <li><a href="#how-it-works" class="hover:text-white">點用</a></li>
+            <li><a href="#use-cases" class="hover:text-white">場景</a></li>
             <li><a href="#pricing" class="hover:text-white">價錢</a></li>
-            <li><a href="#demo" class="hover:text-white">Demo</a></li>
-            <li><a href="#" class="hover:text-white">下載</a></li>
           </ul>
         </div>
 
         <div>
-          <div class="font-semibold text-white mb-3 text-sm">公司</div>
+          <div class="font-semibold text-white mb-3 text-sm">使用</div>
           <ul class="space-y-2 text-sm">
-            <li><a href="#" class="hover:text-white">關於我哋</a></li>
-            <li><a href="#" class="hover:text-white">Blog</a></li>
-            <li><a href="#" class="hover:text-white">聯絡</a></li>
+            <li><a href="https://minute-hk-app.streamlit.app" target="_blank" class="hover:text-white">立即註冊</a></li>
+            <li><a href="https://minute-hk-app.streamlit.app" target="_blank" class="hover:text-white">登入</a></li>
+            <li><a href="mailto:xavierchow61@gmail.com" class="hover:text-white">聯絡支援</a></li>
           </ul>
         </div>
 
         <div>
           <div class="font-semibold text-white mb-3 text-sm">法律</div>
           <ul class="space-y-2 text-sm">
-            <li><a href="#" class="hover:text-white">私隱政策</a></li>
-            <li><a href="#" class="hover:text-white">使用條款</a></li>
-            <li><a href="#" class="hover:text-white">PDPO 合規</a></li>
+            <li><a href="mailto:xavierchow61@gmail.com" class="hover:text-white">私隱政策</a></li>
+            <li><a href="mailto:xavierchow61@gmail.com" class="hover:text-white">使用條款</a></li>
           </ul>
         </div>
       </div>
