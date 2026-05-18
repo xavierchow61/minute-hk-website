@@ -183,6 +183,80 @@
 
     /* Footer dark already */
     footer.bg-slate-900 { background: rgba(0, 0, 0, 0.4) !important; }
+
+    /* ========== Force readable text colors (defensive) ========== */
+    body {
+      color: #fafafa !important;
+    }
+
+    /* All cards default to readable light text */
+    div[class*="rounded-2xl"],
+    div[class*="rounded-xl"] {
+      color: #fafafa;
+    }
+
+    /* Card titles (font-bold / font-semibold without explicit color) inherit white */
+    .font-bold, .font-semibold, .font-black {
+      color: inherit;
+    }
+
+    /* ========== MOBILE: boost contrast (key fix) ========== */
+    @media (max-width: 768px) {
+      /* Body text high contrast */
+      body { color: #ffffff !important; }
+
+      /* All h1/h2/h3 → pure white */
+      h1, h2, h3, h4 { color: #ffffff !important; }
+
+      /* Section titles + emphasized text → bright */
+      .text-slate-900 { color: #ffffff !important; }
+      .text-slate-800 { color: #f1f5f9 !important; }
+      .text-slate-700 { color: #e2e8f0 !important; }
+      .text-slate-600 { color: #cbd5e1 !important; }  /* 由 #a1a1aa 升 */
+      .text-slate-500 { color: #94a3b8 !important; }  /* 由 #71717a 升 */
+      .text-slate-400 { color: #94a3b8 !important; }
+
+      /* Inside cards: ensure muted text more visible */
+      div[class*="rounded-2xl"] .text-slate-600,
+      div[class*="rounded-2xl"] .text-slate-500 {
+        color: #cbd5e1 !important;
+      }
+
+      /* Brand colors brighter on mobile */
+      .text-brand-500 { color: #22d3ee !important; }
+      .text-brand-600 { color: #67e8f9 !important; }
+      .text-brand-700 { color: #a5f3fc !important; }
+
+      /* Make all card titles bold + visible */
+      div[class*="rounded-2xl"] .font-bold,
+      div[class*="rounded-2xl"] .font-semibold {
+        color: #ffffff !important;
+      }
+
+      /* Pricing card content - max contrast */
+      #pricing .font-black { color: #ffffff !important; }
+      #pricing li, #pricing ul { color: #f1f5f9 !important; }
+      #pricing strong { color: #ffffff !important; }
+
+      /* Pain points: emoji + title + desc all bright */
+      .text-3xl { color: inherit !important; }
+
+      /* Hero subtitle */
+      section p { color: #cbd5e1 !important; }
+
+      /* Final CTA section keeps its own colors (white on gradient) */
+      #cta * { /* override above so CTA stays as-is */ }
+      #cta p, #cta .text-blue-100 { color: rgba(255,255,255,0.9) !important; }
+
+      /* Pricing pro card: keep dark text on white-ish bg as is */
+      /* But ensure FREE card text is readable on dark */
+      #pricing [class*="bg-white"] {
+        background-color: rgba(255,255,255,0.05) !important;
+      }
+    }
+
+    /* Even on desktop, ensure h-text on dark sections is visible */
+    section h2, section h3 { color: #ffffff; }
   </style>
 </head>
 
