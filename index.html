@@ -26,18 +26,19 @@
           },
           colors: {
             brand: {
-              50:  '#eff6ff',
-              100: '#dbeafe',
-              500: '#1e66f5',
-              600: '#1d4ed8',
-              700: '#1e40af',
-              900: '#1e293b',
+              50:  '#ecfeff',
+              100: '#cffafe',
+              500: '#06b6d4',
+              600: '#0891b2',
+              700: '#0e7490',
+              900: '#155e75',
             },
           },
           animation: {
             'fade-in-up': 'fadeInUp 0.8s ease-out',
             'pulse-soft': 'pulseSoft 3s ease-in-out infinite',
             'float': 'float 6s ease-in-out infinite',
+            'glow-pulse': 'glowPulse 4s ease-in-out infinite',
           },
           keyframes: {
             fadeInUp: {
@@ -52,6 +53,10 @@
               '0%, 100%': { transform: 'translateY(0)' },
               '50%':      { transform: 'translateY(-10px)' },
             },
+            glowPulse: {
+              '0%, 100%': { opacity: 0.6 },
+              '50%':      { opacity: 1 },
+            },
           },
         }
       }
@@ -59,30 +64,126 @@
   </script>
 
   <style>
-    html { scroll-behavior: smooth; }
-    body { font-family: 'Inter', 'Noto Sans HK', system-ui, sans-serif; }
+    html {
+      scroll-behavior: smooth;
+      background: #09090b;
+    }
+    body {
+      font-family: 'Inter', 'Noto Sans HK', system-ui, sans-serif;
+      background: #09090b;
+      color: #fafafa;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* Layered radial gradient background (glow blobs) */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(900px circle at 15% 10%, rgba(6, 182, 212, 0.15), transparent 50%),
+        radial-gradient(700px circle at 85% 40%, rgba(168, 85, 247, 0.12), transparent 50%),
+        radial-gradient(800px circle at 50% 100%, rgba(6, 182, 212, 0.10), transparent 50%);
+      z-index: -2;
+      pointer-events: none;
+    }
+
+    /* Grid pattern overlay - fades out at edges */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+      z-index: -1;
+      pointer-events: none;
+      -webkit-mask-image: radial-gradient(ellipse 80% 60% at center, black 30%, transparent 80%);
+      mask-image: radial-gradient(ellipse 80% 60% at center, black 30%, transparent 80%);
+    }
+
     .gradient-text {
-      background: linear-gradient(135deg, #1e66f5 0%, #6366f1 100%);
+      background: linear-gradient(135deg, #06b6d4 0%, #a855f7 100%);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
     }
-    .grid-bg {
-      background-image:
-        linear-gradient(rgba(30, 102, 245, 0.05) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(30, 102, 245, 0.05) 1px, transparent 1px);
-      background-size: 40px 40px;
-    }
+
+    .grid-bg { background: transparent; }
+
     .glow {
-      box-shadow: 0 0 60px rgba(30, 102, 245, 0.15);
+      box-shadow:
+        0 0 100px rgba(6, 182, 212, 0.25),
+        0 0 200px rgba(168, 85, 247, 0.15);
     }
+    .glow-cyan { box-shadow: 0 0 60px rgba(6, 182, 212, 0.4); }
+    .glow-purple { box-shadow: 0 0 60px rgba(168, 85, 247, 0.4); }
+
+    .glass {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
+
+    /* === Dark theme overrides === */
+    .bg-white { background-color: rgba(255, 255, 255, 0.04) !important; }
+    .bg-slate-50 { background-color: rgba(255, 255, 255, 0.02) !important; }
+    .bg-slate-100 { background-color: rgba(255, 255, 255, 0.06) !important; }
+    .text-slate-900 { color: #fafafa !important; }
+    .text-slate-800 { color: #e4e4e7 !important; }
+    .text-slate-700 { color: #d4d4d8 !important; }
+    .text-slate-600 { color: #a1a1aa !important; }
+    .text-slate-500 { color: #71717a !important; }
+    .text-slate-400 { color: #71717a !important; }
+    .text-slate-300 { color: #52525b !important; }
+    .border-slate-100 { border-color: rgba(255,255,255,0.06) !important; }
+    .border-slate-200 { border-color: rgba(255,255,255,0.1) !important; }
+
+    /* Brand colors → cyan/teal in dark mode */
+    .text-brand-500 { color: #06b6d4 !important; }
+    .text-brand-600 { color: #0891b2 !important; }
+    .text-brand-700 { color: #67e8f9 !important; }
+    .bg-brand-500 { background-color: #06b6d4 !important; }
+    .bg-brand-600 { background-color: #0891b2 !important; }
+    .bg-brand-50 { background-color: rgba(6, 182, 212, 0.1) !important; }
+    .bg-brand-100 { background-color: rgba(6, 182, 212, 0.15) !important; }
+    .hover\:bg-brand-600:hover { background-color: #0891b2 !important; }
+    .hover\:bg-brand-500:hover { background-color: #06b6d4 !important; }
+    .hover\:text-brand-500:hover { color: #06b6d4 !important; }
+    .border-brand-200 { border-color: rgba(6,182,212,0.3) !important; }
+    .border-brand-500 { border-color: rgba(6,182,212,0.5) !important; }
+    .shadow-brand-500\/30 { box-shadow: 0 8px 30px rgba(6, 182, 212, 0.3) !important; }
+    .shadow-brand-500\/20 { box-shadow: 0 4px 20px rgba(6, 182, 212, 0.2) !important; }
+
+    /* Gradient backgrounds in cards → dark equivalents */
+    .from-brand-500 { --tw-gradient-from: #06b6d4 !important; --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(6,182,212,0)); }
+    .to-indigo-500 { --tw-gradient-to: #a855f7 !important; }
+    .to-indigo-600 { --tw-gradient-to: #9333ea !important; }
+    .from-brand-50 { --tw-gradient-from: rgba(6,182,212,0.06) !important; }
+    .to-indigo-50 { --tw-gradient-to: rgba(168,85,247,0.06) !important; }
+
+    /* Nav glassmorphism */
+    nav { background: rgba(9, 9, 11, 0.7) !important; }
+
+    /* Pricing/Final CTA gradient → cyan + purple */
+    .from-brand-500.to-indigo-600 {
+      background: linear-gradient(135deg, #06b6d4 0%, #a855f7 100%) !important;
+    }
+
+    /* FAQ details */
     details > summary { list-style: none; cursor: pointer; }
     details > summary::-webkit-details-marker { display: none; }
     details[open] summary .icon-chevron { transform: rotate(180deg); }
+
+    /* Footer dark already */
+    footer.bg-slate-900 { background: rgba(0, 0, 0, 0.4) !important; }
   </style>
 </head>
 
-<body class="bg-white text-slate-900 antialiased">
+<body class="text-white antialiased">
 
   <!-- ========== NAV ========== -->
   <nav x-data="{ open: false }" class="fixed top-0 inset-x-0 z-50 backdrop-blur-md bg-white/70 border-b border-slate-100">
