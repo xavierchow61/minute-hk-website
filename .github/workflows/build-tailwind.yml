@@ -1,0 +1,47 @@
+name: Build Tailwind CSS
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'index.html'
+      - 'tailwind.config.js'
+      - 'src/input.css'
+      - 'package.json'
+      - '.github/workflows/build-tailwind.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build-tailwind-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Tailwind CSS
+        run: npm install --no-audit --no-fund
+
+      - name: Build CSS
+        run: npm run build
+
+      - name: Commit built CSS if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/tailwind.css
+          if git diff --staged --quiet; then
+            echo "No CSS changes to commit."
+          else
+            git commit -m "Build: regenerate assets/tailwind.css [skip ci]"
+            git push
+          fi
