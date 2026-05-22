@@ -12,13 +12,17 @@
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="apple-touch-icon" href="/favicon.svg" />
 
+  <!-- Preconnect to all CDN origins so DNS/TLS handshakes happen in parallel -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+HK:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://cdn.tailwindcss.com" />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+
+  <!-- Fonts: trimmed unused weights (Inter dropped 800, Noto HK dropped 500) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Noto+Sans+HK:wght@400;700;900&display=swap" rel="stylesheet" />
 
   <script src="https://cdn.tailwindcss.com"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.9/dist/cdn.min.js"></script>
 
   <script>
     tailwind.config = {
@@ -762,12 +766,5 @@
     </div>
   </footer>
 
-  <script>
-    // Init Lucide icons (if used)
-    if (window.lucide) lucide.createIcons();
-
-    // Web app URL（改呢度去你 deploy 嘅 Streamlit URL）
-    const APP_URL = 'https://minute-hk-app.streamlit.app';
-  </script>
 </body>
 </html>
